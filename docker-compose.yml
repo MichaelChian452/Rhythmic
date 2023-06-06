@@ -1,0 +1,8 @@
+services:
+  audiveris:
+    build: .
+    container_name: audiveris
+  omnizart:
+    image: mctlab/omnizart:latest
+    command: tail -f /dev/null
+    container_name: omnizart
