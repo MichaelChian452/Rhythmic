@@ -6,3 +6,6 @@ services:
     image: mctlab/omnizart:latest
     command: tail -f /dev/null
     container_name: omnizart
+  mid2mxl:
+    build: /mid2mxl
+    container_name: mid2mxl
