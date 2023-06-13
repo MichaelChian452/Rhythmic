@@ -2,14 +2,18 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 def extract_element_tree(file: str) -> ET:
-    # if file is zipped as a .mxl file, then this will unzip into regular xml file
-    #with zipfile.ZipFile("testing/oompa3.mxl","r") as zip_ref:
-    #    zip_ref.extractall("testing")
-    #tree = ET.parse('testing/oompa3.xml')
-
-    # if file is unzipped as a .musicxml file, then we don't need to unzip
-    tree = ET.parse('testing/nr.musicxml')
-
+    tree = None
+    print(file)
+    if file.endswith(('.musicxml', '.xml')):
+        # if file is unzipped as a .musicxml file, then we don't need to unzip
+        tree = ET.parse(file)
+    elif file.endswith('.mxl'):
+        # if file is zipped as a .mxl file, then this will unzip into regular xml file
+        with zipfile.ZipFile(file,"r") as zip_ref:
+            zip_ref.extractall("testing")
+        tree = ET.parse(file.split(',')[0] + '.xml')
+    else:
+        raise Exception('Provided file: ' + file + ' is not supported. File type should be .musicxml or .mxl')
     return tree.getroot()
 
 def parse_et(root: ET) -> list:
@@ -41,5 +45,6 @@ def parse_et(root: ET) -> list:
     return allnotes
 
 
-root_of_tree = extract_element_tree('waa')
-print(parse_et(root_of_tree))
+root_of_tree = extract_element_tree('testing/ks1.musicxml')
+ll = parse_et(root_of_tree)
+print(ll, len(ll))
