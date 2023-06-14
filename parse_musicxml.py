@@ -1,17 +1,17 @@
 import xml.etree.ElementTree as ET
 import zipfile
+import os
 
 def extract_element_tree(file: str) -> ET:
     tree = None
-    print(file)
     if file.endswith(('.musicxml', '.xml')):
         # if file is unzipped as a .musicxml file, then we don't need to unzip
         tree = ET.parse(file)
     elif file.endswith('.mxl'):
         # if file is zipped as a .mxl file, then this will unzip into regular xml file
         with zipfile.ZipFile(file,"r") as zip_ref:
-            zip_ref.extractall("testing")
-        tree = ET.parse(file.split(',')[0] + '.xml')
+            zip_ref.extractall(file.split('/')[0])
+        tree = ET.parse(file.split('/')[0] + '/score.xml')
     else:
         raise Exception('Provided file: ' + file + ' is not supported. File type should be .musicxml or .mxl')
     return tree.getroot()
@@ -25,7 +25,6 @@ def parse_et(root: ET) -> list:
         for measure in part.findall('measure'):
             if measure_num == 1:
                 divisions = int(measure.find('attributes').find('divisions').text)
-                print(divisions)
                 key = int(measure.find('attributes').find('key').find('fifths').text)
             voice = 1
             duration = 0
@@ -45,6 +44,6 @@ def parse_et(root: ET) -> list:
     return allnotes
 
 
-root_of_tree = extract_element_tree('testing/ks1.musicxml')
-ll = parse_et(root_of_tree)
-print(ll, len(ll))
+# root_of_tree = extract_element_tree('compare-tests/comptest1.mxl')
+# ll = parse_et(root_of_tree)
+# print(ll, len(ll))
