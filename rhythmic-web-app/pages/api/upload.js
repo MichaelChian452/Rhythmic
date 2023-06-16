@@ -16,22 +16,36 @@ export const config = {
         bodyParser: false
     }
 }
-
-export default function handler(req, res) {
-    if (req.method == 'POST') {
-        console.log('POST');
+async function upload(req) {
+    return new Promise((resolve, reject) => {
         const bb = busboy({ headers: req.headers });
         bb.on('file', (name, file, info) => {
-            console.log(saveTo);
-            const saveTo = path.join(os.tmpdir(), `busboy-upload-${random()}`);
+            const saveTo = path.join(os.tmpdir(), path.basename(name));
+            console.log('File [' + name + ']: filename: ' + info.filename, saveTo);
             file.pipe(fs.createWriteStream(saveTo));
         });
-        bb.on('close', () => {
-            res.writeHead(200, { 'Connection': 'close' });
-            res.end(`That's all folks!`);
+        bb.on('text', (name, text, info) => {
+            
         });
+        bb.on('finish', () => {
+            console.log('finished');
+            resolve();
+        });
+        bb.on('error', reject);
         req.pipe(bb);
-        // return;
-    }
-    // res.status(200).json({name: 'John Doe'})
+    });
+}
+
+export default async function handler(req, res) {
+    if (req.method == 'POST') {
+        console.log('POST');
+        try {
+            await upload(req);
+            res.status(200).json({ upload: 'Success' });
+        } catch (e) {
+            res.status(500).json({ error: e.message });
+        }
+        } else {
+            res.status(405).json({ error: 'Method not allowed' });
+        }
 }
