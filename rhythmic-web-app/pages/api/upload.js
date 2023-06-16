@@ -20,12 +20,12 @@ async function upload(req) {
     return new Promise((resolve, reject) => {
         const bb = busboy({ headers: req.headers });
         bb.on('file', (name, file, info) => {
-            const saveTo = path.join(os.tmpdir(), path.basename(name));
+            const saveTo = path.join(os.tmpdir(), `${name}-${random()}`);
             console.log('File [' + name + ']: filename: ' + info.filename, saveTo);
             file.pipe(fs.createWriteStream(saveTo));
         });
         bb.on('text', (name, text, info) => {
-            
+
         });
         bb.on('finish', () => {
             console.log('finished');
