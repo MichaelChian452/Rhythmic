@@ -2,6 +2,8 @@ services:
   audiveris:
     build: .
     container_name: audiveris
+    volumes:
+      - testvolume:/home
   omnizart:
     image: mctlab/omnizart:latest
     command: tail -f /dev/null
@@ -12,3 +14,5 @@ services:
   mscore:
     build: /mscore
     container_name: mscore
+volumes:
+  testvolume:
