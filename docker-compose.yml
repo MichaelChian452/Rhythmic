@@ -3,16 +3,14 @@ services:
     build: .
     container_name: audiveris
     volumes:
-      - testvolume:/home
+      - ./data:/home/rhythmic/data
   omnizart:
     image: mctlab/omnizart:latest
     command: tail -f /dev/null
     container_name: omnizart
   mid2mxl:
-    build: /mid2mxl
+    build: ./mid2mxl
     container_name: mid2mxl
   mscore:
-    build: /mscore
+    build: ./mscore
     container_name: mscore
-volumes:
-  testvolume:
