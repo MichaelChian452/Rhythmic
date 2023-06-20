@@ -1,0 +1,15 @@
+.main {
+  align-items: center;
+  padding: 4rem;
+  width:100%;
+  min-height: 100vh;
+}
+
+.centerButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+}
