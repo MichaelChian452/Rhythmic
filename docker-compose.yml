@@ -1,6 +1,6 @@
 services:
   audiveris:
-    build: .
+    build: ./sheet2mxl
     container_name: audiveris
     volumes:
       - ./data:/home/rhythmic/data
