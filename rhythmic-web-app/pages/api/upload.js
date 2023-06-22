@@ -1,10 +1,8 @@
 import { cwd } from 'node:process';
 
-const { randomFillSync } = require('crypto');
-const fs = require('fs');
-const http = require('http');
-const os = require('os');
-const path = require('path');
+const { randomFillSync } = await import('node:crypto');
+import { createWriteStream } from 'node:fs';
+const path = require('node:path');
 
 const busboy = require('busboy');
 
@@ -41,7 +39,7 @@ async function upload(req) {
             try {
                 const saveTo = path.join(`${cwd()}/../data/`, `${name}-${random()}${getFileExtension(info.mimeType)}`);
                 console.log('File [' + name + ']: filename: ' + info.filename, saveTo);
-                file.pipe(fs.createWriteStream(saveTo));
+                file.pipe(createWriteStream(saveTo));
                 filePath = saveTo;
             }
             catch(e) {

@@ -4,6 +4,7 @@ services:
     container_name: audiveris
     volumes:
       - ./data:/home/rhythmic/data
+      - ./scripts:/home/rhythmic/scripts
   omnizart:
     image: mctlab/omnizart:latest
     command: tail -f /dev/null

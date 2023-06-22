@@ -1,6 +1,3 @@
-[submodule "audiveris"]
-	path = sheet2mxl/audiveris
-	url = https://github.com/Audiveris/audiveris
 [submodule "mid2mxl/midi2musicxml"]
 	path = mid2mxl/midi2musicxml
 	url = https://github.com/kaibadash/midi2musicxml
