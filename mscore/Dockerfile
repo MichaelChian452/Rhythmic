@@ -7,4 +7,6 @@ RUN mkdir /usr/local/mscore && tar xzf ./builds/mscore.tar.gz -C /usr/local/msco
 RUN tar xzf ./builds/libsslcrypto1.1.tar.gz -C /usr/local/lib && ldconfig /usr/local/lib
 ENV PATH=/usr/local/Qt-6.5.1/bin:/usr/local/mscore/Linux-Qtlocal-Qt-6.5.1-Make-Release/install/bin:$PATH
 ENV QT_QPA_PLATFORM=offscreen
-CMD tail -f /dev/null
+
+RUN apt-get install -y curl && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt-get install -y nodejs
+CMD node /rhythmic/scripts/checkForNewMidi.js

@@ -11,7 +11,8 @@ export default function Process() {
             <input id="sheet-music-name" name="sheet-music-name" type="text" required />
           </div>
           <div>
-            <input name="sheet-music-img" type="file" accept="image/png, image/jpg" required />
+            <label htmlFor="sheet-music-img">Add Images of Sheet Music in Order</label>
+            <input name="sheet-music-img" type="file" accept="image/png, image/jpg, image/jpeg" multiple required />
           </div>
           <button type="submit">Upload</button>
         </form>

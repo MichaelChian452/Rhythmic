@@ -1,4 +1,5 @@
 import { cwd } from 'node:process';
+import fs from 'node:fs';
 
 const { randomFillSync } = await import('node:crypto');
 import { createWriteStream } from 'node:fs';
@@ -17,6 +18,8 @@ function getFileExtension(mimeType) {
             return '.png';
         case 'image/jpg':
             return '.jpg';
+        case 'image/jpeg':
+            return '.jpeg';
         default:
             throw new Error('unsupported file type.');
     }
@@ -34,10 +37,10 @@ async function upload(req) {
         let filePath = '';
         let projectName = '';
         bb.on('file', (name, file, info) => {
-            console.log(`current dir: ${cwd()}`);
+            console.log(`file received: current dir: ${cwd()}`);
             console.log(info);
             try {
-                const saveTo = path.join(`${cwd()}/../data/`, `${name}-${random()}${getFileExtension(info.mimeType)}`);
+                const saveTo = path.join(`${cwd()}/../data/sheet-music-input/${projectName}`, `${name}-${random()}${getFileExtension(info.mimeType)}`);
                 console.log('File [' + name + ']: filename: ' + info.filename, saveTo);
                 file.pipe(createWriteStream(saveTo));
                 filePath = saveTo;
@@ -47,8 +50,17 @@ async function upload(req) {
             }
         });
         bb.on('field', (fieldName, value) => {
-            if(fieldName == 'sheet-music-name') {
+            console.log(`name of project received: ${value}`);
+            if(fieldName === 'sheet-music-name') {
                 projectName = value;
+                try {
+                    fs.promises.mkdir(`${cwd()}/../data/sheet-music-input/${projectName}`, { recursive: true });
+                    console.log('updated value of projectName and created folder for it');
+                }
+                catch(e) {
+                    console.log(e);
+                    reject(e);
+                }
             }
         });
         bb.on('finish', () => {

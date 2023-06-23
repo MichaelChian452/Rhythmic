@@ -3,15 +3,22 @@ services:
     build: ./sheet2mxl
     container_name: audiveris
     volumes:
-      - ./data:/home/rhythmic/data
-      - ./scripts:/home/rhythmic/scripts
+      - ./data:/rhythmic/data
+      - ./scripts:/rhythmic/scripts
   omnizart:
     image: mctlab/omnizart:latest
-    command: tail -f /dev/null
     container_name: omnizart
-  mid2mxl:
-    build: ./mid2mxl
-    container_name: mid2mxl
+    command: bash /tmp/dockerCommand.sh
+    volumes:
+      - ./omnizart/dockerCommand.sh:/tmp/dockerCommand.sh
+      - ./data:/rhythmic/data
+      - ./scripts:/rhythmic/scripts
+  # # mid2mxl:
+  # #   build: ./mid2mxl
+  # #   container_name: mid2mxl
   mscore:
     build: ./mscore
     container_name: mscore
+    volumes:
+      - ./data:/rhythmic/data
+      - ./scripts:/rhythmic/scripts
