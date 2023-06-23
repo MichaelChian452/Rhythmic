@@ -60,4 +60,3 @@ def notes_is_same(t1: tuple, t2: tuple) -> bool: # tuples are in format (measure
         if t1[2][i] != t2[2][i]:
             return False
     return True
-compare('compare-tests/multiple-errors.mxl', 'compare-tests/c-major-scale.mxl')

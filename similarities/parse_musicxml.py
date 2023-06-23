@@ -9,9 +9,10 @@ def extract_element_tree(file: str) -> ET:
         tree = ET.parse(file)
     elif file.endswith('.mxl'):
         # if file is zipped as a .mxl file, then this will unzip into regular xml file
+        path = os.path.dirname(file)
         with zipfile.ZipFile(file,"r") as zip_ref:
-            zip_ref.extractall(file.split('/')[0])
-        tree = ET.parse(file.split('/')[0] + '/score.xml')
+            zip_ref.extractall(path)
+        tree = ET.parse(path + '/score.xml')
     else:
         raise Exception('Provided file: ' + file + ' is not supported. File type should be .musicxml or .mxl')
     return tree.getroot()
