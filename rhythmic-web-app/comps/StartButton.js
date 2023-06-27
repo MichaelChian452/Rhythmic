@@ -4,7 +4,7 @@ export default function StartButton() {
 
     return (
         <div>
-            <Link href="/process">Get Started</Link>
+            <Link href="/project">Get Started</Link>
         </div>
     )
 }

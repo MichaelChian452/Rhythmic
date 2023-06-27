@@ -1,0 +1,19 @@
+{
+    "version": "1",
+    "projects": [
+        {
+            "projectName": "sheee",
+            "sheetFilePath": [
+                "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\sheee\\sheet-music-img-c721724ebea1f9f9aab35c3553901955.jpeg"
+            ],
+            "id": "1",
+            "recordings": [
+                {
+                    "id": "1",
+                    "audioFilePath": "somehwere",
+                    "grade": ""
+                }
+            ]
+        }
+    ]
+}
