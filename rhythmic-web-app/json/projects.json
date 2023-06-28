@@ -2,18 +2,17 @@
     "version": "1",
     "projects": [
         {
-            "projectName": "sheee",
-            "sheetFilePath": [
-                "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\sheee\\sheet-music-img-c721724ebea1f9f9aab35c3553901955.jpeg"
-            ],
+            "projectName": "test",
             "id": "1",
             "recordings": [
                 {
                     "id": "1",
-                    "audioFilePath": "somehwere",
-                    "grade": ""
+                    "report": "",
+                    "recordingFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audio-input\\test\\1-1-recording-78daeac77f293fbaf1a18b67b0a5944b.m4a"
                 }
-            ]
+            ],
+            "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\test\\1-sheet-music-img-39157804e50bcfae0e58154aaa85f971.jpeg",
+            "sheet-music-mxl": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audiveris-output\\1-test3.mxl"
         }
     ]
 }

@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import StartButton from '@/comps/StartButton'
+import Link from 'next/link'
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.centerButtons}>
-        <StartButton />
+        <Link href="/project" className={styles.button}>Get started with a new project</Link>
       </div>
     </main>
   )

@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+}
+
+.mainNav {
+    padding: 0.5rem;
+}
+
+.secondaryNav {
+    padding: 0.5rem;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: gray;
+    padding: 2rem;
+}
