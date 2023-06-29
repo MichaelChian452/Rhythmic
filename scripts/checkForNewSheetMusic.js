@@ -15,7 +15,6 @@ function runAudiveris(event) {
         }
         console.log(`stdout: ${stdout}`);
         console.log('audiveris successfully ran');
-        saveToJSON(event.base);
     });
 }
 

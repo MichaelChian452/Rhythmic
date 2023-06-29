@@ -75,7 +75,7 @@ export default async function ProjectPage({ params }) {
 
     return (
       <main className={styles.main}>
-        <h1 className={styles.titleTag}>Your New Upload: { foundProject['projectName'] } </h1>
+        <h1 className={styles.titleTag}>Your Project: { foundProject['projectName'] } </h1>
         <div>
             {/* <Image src= {sheetImg} alt="your sheet music upload."/> */}
             bruh

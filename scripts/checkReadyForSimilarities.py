@@ -34,17 +34,17 @@ class Watcher:
 class uploadHandler(FileSystemEventHandler):
 
     def rightExtension(self, fileName: str) -> bool:
-        split = fileName.split('.')
-        if split[len(split) - 1] == 'mxl':
+        if fileName.endswith('.mxl'):
             return True
-        elif split[len(split) - 1] == 'musicxml':
+        elif fileName.endswith('.musicxml'):
             return True
         return False
     
-    def runSimilarityTest(self, file1: str, file2: str):
+    def runAndFormatSimilarityTest(self, file1: str, file2: str):
         # file1 = sheet music xml, file2 = audio xml
         res = compare(file2, file1)
-        print(res)
+        for error in res:
+            print(error)
         return res
 
     def on_any_event(self, event):
@@ -89,7 +89,7 @@ class uploadHandler(FileSystemEventHandler):
                                 if recording['id'] == recordingId:
                                     recording['recording-mxl'] = filePath
                                     found = True
-                                    recording['grade'] = self.runSimilarityTest(proj['sheet-music-mxl'], filePath)
+                                    recording['grade'] = self.runAndFormatSimilarityTest(proj['sheet-music-mxl'], filePath)
                                     break
                             break
                     if not found:
@@ -99,6 +99,14 @@ class uploadHandler(FileSystemEventHandler):
 
             print('new shit created')
 
+def testingFormatting(file1: str, file2: str) -> str:
+    # file1 = sheet music xml, file2 = audio xml
+    res = compare(file2, file1)
+    for error in res:
+        print(error)
+    return res
+
 if __name__ == '__main__':
     watcher = Watcher('./../data', uploadHandler())
-    watcher.run()
+    # watcher.run()
+    ret = testingFormatting("C:\\Users\\Michael\\Documents\\rhythmic\\data\\audiveris-output\\2-sheet-music-img-a311d16742982927676ac0e4c70ccbc1.mxl", "C:\\Users\\Michael\\Documents\\rhythmic\\data\\mscore-output\\2-1-recording-cfb7c0f3aeeb5057f23b250111b016ba.musicxml")

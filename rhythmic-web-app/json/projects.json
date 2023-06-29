@@ -13,6 +13,19 @@
             ],
             "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\test\\1-sheet-music-img-39157804e50bcfae0e58154aaa85f971.jpeg",
             "sheet-music-mxl": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audiveris-output\\1-test3.mxl"
+        },
+        {
+            "projectName": "testing-full",
+            "id": "2",
+            "recordings": [
+                {
+                    "id": "1",
+                    "report": "",
+                    "recordingFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audio-input\\testing-full\\2-1-recording-cfb7c0f3aeeb5057f23b250111b016ba.m4a"
+                }
+            ],
+            "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\testing-full\\2-sheet-music-img-a311d16742982927676ac0e4c70ccbc1.jpeg",
+            "sheet-music-mxl": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audiveris-output\\2-sheet-music-img-a311d16742982927676ac0e4c70ccbc1.mxl"
         }
     ]
 }

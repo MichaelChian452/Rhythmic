@@ -1,8 +1,10 @@
 import xml.etree.ElementTree as ET
 import zipfile
 import os
+from classes import Note, ChordAndPosition, AllChords
 
 def extract_element_tree(file: str) -> ET:
+    print(file)
     tree = None
     if file.endswith(('.musicxml', '.xml')):
         # if file is unzipped as a .musicxml file, then we don't need to unzip
@@ -10,14 +12,20 @@ def extract_element_tree(file: str) -> ET:
     elif file.endswith('.mxl'):
         # if file is zipped as a .mxl file, then this will unzip into regular xml file
         path = os.path.dirname(file)
+        fName = '/' + os.path.splitext(os.path.basename(file))[0]
         with zipfile.ZipFile(file,"r") as zip_ref:
             zip_ref.extractall(path)
-        tree = ET.parse(path + '/score.xml')
+        if os.path.isfile(path + '/score.xml'):
+            tree = ET.parse(path + '/score.xml')
+        elif os.path.isfile(path + fName + '.xml'):
+            tree = ET.parse(path + fName + '.xml')
+        else:
+            raise Exception('file: [' + path + '] not found')
     else:
         raise Exception('Provided file: ' + file + ' is not supported. File type should be .musicxml or .mxl')
     return tree.getroot()
 
-def parse_et(root: ET) -> list:
+def parse_et(root: ET) -> AllChords:
     allnotes = []
     measure_num = 1
     divisions = -1 # the number of divisons to one quarter note throughout this piece
@@ -29,7 +37,8 @@ def parse_et(root: ET) -> list:
                 key = int(measure.find('attributes').find('key').find('fifths').text)
             voice = 1
             duration = 0
-            cur_measure_notes = {} # dictionary of keys = duration, values = tuple (note duration, note step, note octave, note staff), all values are str
+            prev_added_duration = 0
+            cur_measure_notes = {} # dictionary of keys = duration, values = Note (note duration, note step, note octave, note staff), all values are str
             for note in measure.findall('note'):
                 if int(note.find('voice').text) != voice:
                     duration = 0
@@ -37,14 +46,17 @@ def parse_et(root: ET) -> list:
                 if note.find('pitch') is not None: # if the note is a rest
                     if duration not in cur_measure_notes:
                         cur_measure_notes[duration] = []
-                    cur_measure_notes[duration].append((note.find('duration').text, note.find('pitch').find('step').text, note.find('pitch').find('octave').text, note.find('staff').text))
-                duration += int(note.find('duration').text)
+                    new_note = Note(note.find('duration').text, note.find('pitch').find('step').text, note.find('pitch').find('octave').text)
+                    if note.find('chord') is not None:
+                        cur_measure_notes[duration - prev_added_duration].append(new_note)
+                    else:
+                        cur_measure_notes[duration].append(new_note)
+                if note.find('chord') is None:
+                    duration += int(note.find('duration').text)
+                    prev_added_duration = int(note.find('duration').text)
             for i in sorted(cur_measure_notes.keys()):
-                allnotes.append((measure_num, i, cur_measure_notes[i]))
+                new_chord = ChordAndPosition(measure_num, i, cur_measure_notes[i])
+                allnotes.append(new_chord)
             measure_num += 1
-    return allnotes
-
-
-# root_of_tree = extract_element_tree('compare-tests/comptest1.mxl')
-# ll = parse_et(root_of_tree)
-# print(ll, len(ll))
+    combined_piece = AllChords(divisions, allnotes)
+    return combined_piece
