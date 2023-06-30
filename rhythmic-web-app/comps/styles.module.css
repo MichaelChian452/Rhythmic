@@ -1,3 +1,11 @@
+.vertFlexTable {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
 .navbar {
     display: flex;
     flex-direction: row;

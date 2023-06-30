@@ -4,7 +4,7 @@ import os
 from classes import Note, ChordAndPosition, AllChords
 
 def extract_element_tree(file: str) -> ET:
-    print(file)
+    print('extracting etree of: ' + file)
     tree = None
     if file.endswith(('.musicxml', '.xml')):
         # if file is unzipped as a .musicxml file, then we don't need to unzip

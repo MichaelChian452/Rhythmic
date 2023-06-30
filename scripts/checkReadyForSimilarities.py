@@ -43,11 +43,13 @@ class uploadHandler(FileSystemEventHandler):
     def runAndFormatSimilarityTest(self, file1: str, file2: str):
         # file1 = sheet music xml, file2 = audio xml
         res = compare(file2, file1)
+        print('---------- returned to watcher --------------')
         for error in res:
             print(error)
         return res
 
     def on_any_event(self, event):
+        time.sleep(1)
         print(event)
         filePath = os.path.abspath(event.src_path)
         jsonPath = './../rhythmic-web-app/json/projects.json'
@@ -97,16 +99,7 @@ class uploadHandler(FileSystemEventHandler):
                     with open(jsonPath, 'w') as f:
                         json.dump(parsedJson, f, indent=4)
 
-            print('new shit created')
-
-def testingFormatting(file1: str, file2: str) -> str:
-    # file1 = sheet music xml, file2 = audio xml
-    res = compare(file2, file1)
-    for error in res:
-        print(error)
-    return res
 
 if __name__ == '__main__':
     watcher = Watcher('./../data', uploadHandler())
-    # watcher.run()
-    ret = testingFormatting("C:\\Users\\Michael\\Documents\\rhythmic\\data\\audiveris-output\\2-sheet-music-img-a311d16742982927676ac0e4c70ccbc1.mxl", "C:\\Users\\Michael\\Documents\\rhythmic\\data\\mscore-output\\2-1-recording-cfb7c0f3aeeb5057f23b250111b016ba.musicxml")
+    watcher.run()

@@ -78,7 +78,6 @@ async function upload(req) {
                     if (contents['projects'][key]['id'] === projectId) {
                         jsonObject['id'] = (contents['projects'][key]['recordings'].length + 1).toString();
                         filePrefix = `${projectId}-${jsonObject['id']}`;
-                        jsonObject['report'] = '';
                         projectName = contents['projects'][key]['projectName'];
                         try {
                             fs.promises.mkdir(`${cwd()}/../data/audio-input/${projectName}`, { recursive: true });

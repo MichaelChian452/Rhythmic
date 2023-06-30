@@ -1,4 +1,6 @@
 import numpy as np
+import json
+from decimal import *
 from parse_musicxml import extract_element_tree, parse_et
 from classes import Note, ChordAndPosition, AllChords
 
@@ -73,18 +75,41 @@ def compare(file1: str, file2: str) -> list:
         errors.insert(0, ('insert', list2.allChords[col]))
     return formatOutput(errors, list1, list2)
 
-def endBlock(delete: list[ChordAndPosition], insert: list[ChordAndPosition]) -> tuple:
+
+def endBlock(delete: list[ChordAndPosition], insert: list[ChordAndPosition]) -> json:
     if len(insert) == 0 and len(delete) != 0:
-        return (('delete', delete))
+        return ({
+            'errorType': 'delete',
+            'delete': delete
+        })
     elif len(insert) != 0 and len(delete) == 0:
-        return (('insert', insert))
+        return ({
+            'errorType': 'insert',
+            'insert': insert
+        })
     elif len(insert) != 0 and len(delete) != 0:
-        return(('replace', delete, insert))
+        return ({
+            'errorType': 'replace',
+            'delete': delete,
+            'insert': insert
+        })
     else:
         raise Exception('shits not a proper error')
 
+def toJson(chord: ChordAndPosition, divisions: int) -> json:
+    to_return = {}
+    to_return['measure'] = chord.measure
+    to_return['startBeat'] = float(Decimal(chord.start_duration) / Decimal(divisions))
+    to_return['notes'] = []
+    for note in chord.notes:
+        new_note = {}
+        new_note['duration'] = float(Decimal(note.duration) / Decimal(divisions))
+        new_note['note'] = '' + note.step + note.octave
+        to_return['notes'].append(new_note)
+    return to_return
+    
 
-def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords) -> list[tuple]:
+def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords) -> list:
     to_return = []
     for error in errors:
         if error[0] == 'replace':
@@ -93,9 +118,8 @@ def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords) -> lis
             print('insert: ' + str(error[1]))
         elif error[0] == 'delete':
             print('delete: ' + str(error[1]))
-    print('------------- start formatting --------------')
     if len(errors) == 0:
-        return 'there are no mistakes!'
+        return []
     cur_error = 0
     cur_rec_pos = 0
     insert = []
@@ -103,15 +127,14 @@ def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords) -> lis
     while cur_error < len(errors) and cur_rec_pos < len(list1.allChords):
         if notes_is_same(list1.divisions, errors[cur_error][1], list1.divisions, list1.allChords[cur_rec_pos]):
             if errors[cur_error][0] == 'replace':
-                insert.append(errors[cur_error][2])
-                delete.append(errors[cur_error][1])
+                insert.append(toJson(errors[cur_error][2], list1.divisions))
+                delete.append(toJson(errors[cur_error][1], list1.divisions))
             elif errors[cur_error][0] == 'insert':
-                insert.append(errors[cur_error][1])
+                insert.append(toJson(errors[cur_error][1], list1.divisions))
             elif errors[cur_error][0] == 'delete':
-                delete.append(errors[cur_error][1])
+                delete.append(toJson(errors[cur_error][1], list1.divisions))
             cur_error += 1
         else:
-
             if len(insert) != 0 or len(delete) != 0:
                 to_return.append(endBlock(delete, insert))
             insert = []
@@ -120,12 +143,12 @@ def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords) -> lis
     
     while cur_error < len(errors):
         if errors[cur_error][0] == 'replace':
-            insert.append(errors[cur_error][2])
-            delete.append(errors[cur_error][1])
+            insert.append(toJson(errors[cur_error][2], list1.divisions))
+            delete.append(toJson(errors[cur_error][1], list1.divisions))
         elif errors[cur_error][0] == 'insert':
-            insert.append(errors[cur_error][1])
+            insert.append(toJson(errors[cur_error][1], list1.divisions))
         elif errors[cur_error][0] == 'delete':
-            delete.append(errors[cur_error][1])
+            delete.append(toJson(errors[cur_error][1], list1.divisions))
 
     if len(insert) != 0 or len(delete) != 0:
         to_return.append(endBlock(delete, insert))
