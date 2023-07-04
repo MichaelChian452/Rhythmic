@@ -1,4 +1,4 @@
-import styles from '../../../page.module.css'
+import styles from '../../../../page.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import Grading from '@/comps/Grading'
