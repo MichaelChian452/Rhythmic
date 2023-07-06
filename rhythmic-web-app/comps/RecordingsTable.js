@@ -48,9 +48,9 @@ export default function RecordingsTable(data) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {recordings.map((rec) => (
-                        <StyledTableRow>
-                            <StyledTableCell><Link href={`${projectPath}/recording/${rec['id']}`}>{rec['id']}</Link></StyledTableCell>
+                    {recordings.map(({ id }) => (
+                        <StyledTableRow key={id}>
+                            <StyledTableCell><Link href={`${projectPath}/recording/${id}`}>{id}</Link></StyledTableCell>
                             <StyledTableCell>Grade</StyledTableCell>
                         </StyledTableRow>
                     ))}

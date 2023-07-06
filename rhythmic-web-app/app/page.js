@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.centerButtons}>
-        <Button href="/project" className={styles.button}>Get started with a new project</Button>
+        <Button href="/project/new" className={styles.button}>Get started with a new project</Button>
       </div>
     </main>
   )

@@ -8,8 +8,8 @@ export default function Navbar() {
                 <h1>Rhythmic</h1>
             </Link>
             <div id="other-links">
-                <Link href="/home" className={styles.secondaryNav}>Projects</Link>
-                <Link href="/project" className={styles.secondaryNav}>New</Link>
+                <Link href="/project" className={styles.secondaryNav}>Projects</Link>
+                <Link href="/project/new" className={styles.secondaryNav}>New</Link>
             </div>
             
         </div>
