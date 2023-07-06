@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,9 +16,11 @@
     "@mui/material": "^5.13.6",
     "busboy": "^1.6.0",
     "image-type": "^5.2.0",
+    "jimp": "^0.22.8",
     "next": "13.4.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "eslint": "8.42.0",

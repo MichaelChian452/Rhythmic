@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from 'react';
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -10,10 +9,10 @@ import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
-export default function ProjectsTable(data) {
+export default function ProjectsTable({ projects }) {
+    console.log('ProjectsTable, projects=', projects);
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
@@ -35,26 +34,22 @@ export default function ProjectsTable(data) {
     },
     }));
     
-    const [previewImageUrl, setPreviewImageUrl] = useState(null);
-    const [projects, setProjects] = useState(data['data']);
+    // const getProjects = async () => {
+    //     const query = await fetch('/api/projects');
+    //     const response = query.json();
+    //     console.log(response);
+    //     return response;
+    // }
 
-    const handleImage = (link) => {
-        const reader = new FileReader();
-        reader.addEventListener('load', () => {
-            setPreviewImageUrl(reader.result);
-        });
-    
-        reader.readAsDataURL(link);
-        return 1;
-    };
+    // const projs = await getProjects();
 
     return (
         <TableContainer sx={{ maxHeight: 440 }}>
             <Table aria-label="customized table">
                 <TableHead>
                     <TableRow>
-                        <StyledTableCell>Project Name</StyledTableCell>
-                        <StyledTableCell>thumbnail</StyledTableCell>
+                        <StyledTableCell><h3>Project Name</h3></StyledTableCell>
+                        <StyledTableCell><h3>thumbnail</h3></StyledTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
