@@ -3,7 +3,6 @@ import 'server-only'
 import path from 'node:path'
 import { readFile } from 'node:fs/promises'
 import imageType from 'image-type'
-import { getJsPageSizeInKb } from 'next/dist/build/utils';
 
 const getBase64FromUrl = async (url) => {
     const data = await readFile(url);
@@ -28,14 +27,14 @@ export async function getProjectById(projectId) {
 export async function getProjects() {
     console.log('get projects');
     const json = await getJSON();
-    const projects = [];
-    for (let key in json) {
-        const project = {};
-        project['projectName'] = json[key]['projectName'];
-        project['id'] = json[key]['id'];
-        project['sheetFilePath'] = json[key]['sheetFilePath'];
-        project['base64'] = await getBase64FromUrl(project['sheetFilePath']);
-        projects.push(project);
-    }
+    const projects = Promise.all(json.map(async ({ projectName, id, sheetFilePath }) => {
+        return {
+            projectName, 
+            id,
+            sheetFilePath,
+            base64: await getBase64FromUrl(sheetFilePath)
+        };
+    }));
+
     return projects;
 }

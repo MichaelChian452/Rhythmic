@@ -12,7 +12,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 export default function ProjectsTable({ projects }) {
-    console.log('ProjectsTable, projects=', projects);
+    // console.log('ProjectsTable, projects=', projects);
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
@@ -33,15 +33,6 @@ export default function ProjectsTable({ projects }) {
         border: 0,
     },
     }));
-    
-    // const getProjects = async () => {
-    //     const query = await fetch('/api/projects');
-    //     const response = query.json();
-    //     console.log(response);
-    //     return response;
-    // }
-
-    // const projs = await getProjects();
 
     return (
         <TableContainer sx={{ maxHeight: 440 }}>
@@ -53,10 +44,10 @@ export default function ProjectsTable({ projects }) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {projects.map((project) => (
-                        <StyledTableRow>
-                            <StyledTableCell><Link href={`/project/${project['id']}`}>{project['projectName']}</Link></StyledTableCell>
-                            <StyledTableCell><Image src={(project['base64'])} alt="Project Image" width="100" height="50" style={{'border-radius':'5px'}}/></StyledTableCell>
+                    {projects.map(({id, projectName, base64}) => (
+                        <StyledTableRow key={id}>
+                            <StyledTableCell><Link href={`/project/${id}`}>{projectName}</Link></StyledTableCell>
+                            <StyledTableCell><Image src={base64} alt="Project Image" width="100" height="50" style={{'borderRadius':'5px'}}/></StyledTableCell>
                         </StyledTableRow>
                     ))}
                 </TableBody>
