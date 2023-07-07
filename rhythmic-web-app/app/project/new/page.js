@@ -1,6 +1,6 @@
 'use client'
 
-import styles from '../../page.module.css'
+import { main } from '../../page.module.css'
 import { Button, IconButton, InputLabel, TextField, Unstable_Grid2 as Grid, Typography } from '@mui/material'
 import { Add as AddIcon } from '@mui/icons-material';
 import { useState, useRef } from "react";
@@ -23,7 +23,7 @@ export default function Process() {
     };
 
     return (
-      <main className={styles.main}>
+      <main className={main}>
         <Typography variant="h3" component="h1" align="left" gutterBottom>
             Create a new project
         </Typography>

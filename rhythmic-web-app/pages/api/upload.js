@@ -153,19 +153,22 @@ async function upload(req) {
 async function writeToJSON(jsonObject, contents) {
     console.log(`writing ${JSON.stringify(jsonObject)} to json...`);
     if (isRecording == false) {
+        jsonObject['thumbnail'] = saveThumbnail();
         contents['projects'].push(jsonObject);
 
         console.log('wrote sheet music to projects.json');
     }
     else {
-        let id = jsonObject['id'];
+        const projId = jsonObject['id'];
         let recording = jsonObject['jsonObject'];
-        for(let key in contents['projects']) {
-            if (contents['projects'][key]['id'] === id) {
-                contents['projects'][key]['recordings'].push(recording);
-                console.log('wrote new recording to projects.json');
-            }
-        }
+        contents['projects'].find(({ id }) => id === projId)['recordings'].push(recording);
+        console.log('wrote new recording to projects.json');
+        // for(let key in contents['projects']) {
+        //     if (contents['projects'][key]['id'] === id) {
+        //         contents['projects'][key]['recordings'].push(recording);
+        //         console.log('wrote new recording to projects.json');
+        //     }
+        // }
     }
     const jsonDir = path.join(process.cwd(), 'json');
     await writeFile(`${jsonDir}/projects.json`, JSON.stringify(contents, false, 4));
@@ -178,12 +181,6 @@ export default async function handler(req, res) {
         console.log('POST');
         try {
             const id = await upload(req);
-            // let id;
-            // await (async () => {
-            //     id = await writeToJSON(jsonObject);
-            // })()
-            console.log(`json id: ${id}`);
-            // res.status(200).json('success');
             res.redirect(302, `/project/${id}`);
             
         } catch (e) {

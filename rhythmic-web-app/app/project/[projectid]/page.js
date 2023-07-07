@@ -4,14 +4,14 @@ import RecordingsTable from '@/comps/RecordingsTable'
 import { getProjectById } from '@/lib/utils'
 import RecordingUploadForm from '@/comps/RecordingUploadForm'
 
-
 export default async function ProjectPage({ params }) {
-
+    const startTime = Date.now();
     const project = await getProjectById(params.projectid);
     const { projectName, id, recordings } = project;
 
     console.log('project page: ', project);
-
+    console.log('getProjectById() took: ', Date.now() - startTime, ' milliseconds to complete');
+    
     return (
       <main className={main}>
         <h1 className={titleTag}>Your Project: { projectName } </h1>

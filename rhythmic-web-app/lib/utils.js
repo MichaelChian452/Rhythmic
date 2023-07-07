@@ -14,20 +14,20 @@ const getBase64FromUrl = async (url) => {
     return `data:${type.mime};base64,${b64}`;
 };
 
-const getJSON = async () => {
+const getJSONList = async () => {
     const jsonDir = path.join(process.cwd(), 'json');
     return JSON.parse(await readFile(`${jsonDir}/projects.json`, { encoding: 'utf8' }))['projects'];
 }
 
 export async function getProjectById(projectId) {
-    const json = await getJSON();
-    return json.find(({ id }) => id === projectId);
+    const jsonList = await getJSONList();
+    return jsonList.find(({ id }) => id === projectId);
 }
 
 export async function getProjects() {
     console.log('get projects');
-    const json = await getJSON();
-    const projects = Promise.all(json.map(async ({ projectName, id, sheetFilePath }) => {
+    const jsonList = await getJSONList();
+    const projects = Promise.all(jsonList.map(async ({ projectName, id, sheetFilePath }) => {
         return {
             projectName, 
             id,
@@ -35,6 +35,15 @@ export async function getProjects() {
             base64: await getBase64FromUrl(sheetFilePath)
         };
     }));
-
     return projects;
+}
+
+export async function getRecordingById(projectId, recordingId) {
+    console.log('get recording from project id:', projectId, 'recording id:', recordingId);
+    const { projectName, recordings } = await getProjectById(projectId);
+    const recording = recordings.find(({ id }) => id === recordingId);
+    return {
+        projectName, 
+        recording
+    }
 }
