@@ -12,6 +12,7 @@
                 }
             ],
             "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\test\\1-sheet-music-img-39157804e50bcfae0e58154aaa85f971.jpeg",
+            "thumbnail": "3-sheet-music-img-f270347ac6e776f9f786763f015d2dfb-thumbnail.jpeg",
             "sheet-music-mxl": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audiveris-output\\1-test3.mxl"
         },
         {
@@ -169,6 +170,7 @@
                 }
             ],
             "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\testing-full\\2-sheet-music-img-a311d16742982927676ac0e4c70ccbc1.jpeg",
+            "thumbnail": "3-sheet-music-img-f270347ac6e776f9f786763f015d2dfb-thumbnail.jpeg",
             "sheet-music-mxl": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audiveris-output\\2-sheet-music-img-a311d16742982927676ac0e4c70ccbc1.mxl"
         },
         {
@@ -334,14 +336,14 @@
                             "delete": [
                                 {
                                     "measure": 1,
-                                    "startBeat": 3.0,
+                                    "startBeat": 3,
                                     "notes": [
                                         {
                                             "duration": 0.3333333333333333,
                                             "note": "B6"
                                         },
                                         {
-                                            "duration": 1.0,
+                                            "duration": 1,
                                             "note": "B4"
                                         }
                                     ]
@@ -358,14 +360,14 @@
                                 },
                                 {
                                     "measure": 2,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
-                                            "duration": 1.0,
+                                            "duration": 1,
                                             "note": "B4"
                                         },
                                         {
-                                            "duration": 1.0,
+                                            "duration": 1,
                                             "note": "C5"
                                         }
                                     ]
@@ -394,7 +396,7 @@
                                 },
                                 {
                                     "measure": 2,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -409,7 +411,7 @@
                             "delete": [
                                 {
                                     "measure": 4,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.6666666666666666,
@@ -429,7 +431,7 @@
                                 },
                                 {
                                     "measure": 4,
-                                    "startBeat": 1.0,
+                                    "startBeat": 1,
                                     "notes": [
                                         {
                                             "duration": 0.5,
@@ -451,7 +453,7 @@
                             "insert": [
                                 {
                                     "measure": 4,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -475,7 +477,15 @@
                 }
             ],
             "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\oompa\\3-sheet-music-img-f270347ac6e776f9f786763f015d2dfb.jpeg",
+            "thumbnail": "3-sheet-music-img-f270347ac6e776f9f786763f015d2dfb-thumbnail.jpeg",
             "sheet-music-mxl": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audiveris-output\\3-sheet-music-img-f270347ac6e776f9f786763f015d2dfb.mxl"
+        },
+        {
+            "projectName": "TT",
+            "id": "4",
+            "recordings": [],
+            "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\TT\\4-sheet-music-img-0f9dddc1250aa5bcd389957f738af06e.jpeg",
+            "thumbnail": {}
         }
     ]
 }

@@ -39,7 +39,7 @@ export default function Process() {
                     <InputLabel htmlFor="sheet-music-name">Sheet Music Images</InputLabel>
                 </Grid>
                 <Grid xs={8}>
-                    {previewImageUrl && <img src={previewImageUrl} alt="Uploaded Image" height="100" style={{'border-radius':'5px'}}/>}
+                    {previewImageUrl && <img src={previewImageUrl} alt="Uploaded Image" height="100" style={{'borderRadius':'5px'}}/>}
                     <IconButton color="primary" aria-label="upload picture"
                         onClick={(e) => ref.current?.click()}
                         variant="contained" component="span"

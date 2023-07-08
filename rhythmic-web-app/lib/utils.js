@@ -27,11 +27,12 @@ export async function getProjectById(projectId) {
 export async function getProjects() {
     console.log('get projects');
     const jsonList = await getJSONList();
-    const projects = Promise.all(jsonList.map(async ({ projectName, id, sheetFilePath }) => {
+    const projects = Promise.all(jsonList.map(async ({ projectName, id, sheetFilePath, thumbnail }) => {
         return {
             projectName, 
             id,
             sheetFilePath,
+            thumbnail,
             base64: await getBase64FromUrl(sheetFilePath)
         };
     }));

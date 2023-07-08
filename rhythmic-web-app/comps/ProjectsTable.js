@@ -44,10 +44,10 @@ export default function ProjectsTable({ projects }) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {projects.map(({id, projectName, base64}) => (
+                    {projects.map(({id, projectName, thumbnail, base64}) => (
                         <StyledTableRow key={id}>
                             <StyledTableCell><Link href={`/project/${id}`}>{projectName}</Link></StyledTableCell>
-                            <StyledTableCell><Image src={base64} alt="Project Image" width="100" height="50" style={{'borderRadius':'5px'}}/></StyledTableCell>
+                            <StyledTableCell><Image src={`/api/assets/${thumbnail}`} alt="Project Image" width="100" height="50" style={{'borderRadius':'5px'}}/></StyledTableCell>
                         </StyledTableRow>
                     ))}
                 </TableBody>

@@ -1,4 +1,4 @@
-const FILENAME_REGEX = /^[\w\.]+$/;
+const FILENAME_REGEX = /^[\w-\.]+$/;
 import path from 'node:path';
 import { readFile } from 'node:fs/promises';
 import mime from 'mime';
@@ -13,8 +13,7 @@ export default async function handler(req, res) {
         return res.status(400).send('Bad Request');
     }
 
-    const filePath = path.join(process.cwd(), 'data', 'assets', filename);
-
+    const filePath = path.join(process.cwd(), '/../', 'data', 'assets', filename);
     try {
         const fileContent = await readFile(filePath);
         const mimeType = mime.getType(filePath);
