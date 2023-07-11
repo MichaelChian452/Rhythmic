@@ -481,11 +481,18 @@
             "sheet-music-mxl": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audiveris-output\\3-sheet-music-img-f270347ac6e776f9f786763f015d2dfb.mxl"
         },
         {
-            "projectName": "TT",
+            "projectName": "www",
             "id": "4",
             "recordings": [],
-            "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\TT\\4-sheet-music-img-0f9dddc1250aa5bcd389957f738af06e.jpeg",
-            "thumbnail": {}
+            "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\www\\4-sheet-music-img-4404dc2bad57c5619ed0fc92c78bc340.jpeg",
+            "thumbnail": "4-sheet-music-img-4404dc2bad57c5619ed0fc92c78bc340-thumbnail.jpeg"
+        },
+        {
+            "projectName": "aa",
+            "id": "5",
+            "recordings": [],
+            "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\aa\\5-sheet-music-img-dc020eda009e77bed7ef53a139fcfd51.jpeg",
+            "thumbnail": "5-sheet-music-img-dc020eda009e77bed7ef53a139fcfd51-thumbnail.jpeg"
         }
     ]
 }

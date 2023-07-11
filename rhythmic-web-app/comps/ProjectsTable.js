@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import path from 'node:path';
+
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -12,7 +14,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 export default function ProjectsTable({ projects }) {
-    // console.log('ProjectsTable, projects=', projects);
+    console.log('ProjectsTable, projects=', projects);
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
@@ -39,15 +41,15 @@ export default function ProjectsTable({ projects }) {
             <Table aria-label="customized table">
                 <TableHead>
                     <TableRow>
+                        <StyledTableCell><h3>Thumbnail</h3></StyledTableCell>
                         <StyledTableCell><h3>Project Name</h3></StyledTableCell>
-                        <StyledTableCell><h3>thumbnail</h3></StyledTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {projects.map(({id, projectName, thumbnail, base64}) => (
+                    {projects.map(({id, projectName, thumbnail}) => (
                         <StyledTableRow key={id}>
+                            <StyledTableCell><Image src={`/api/assets/thumbnail/${thumbnail}`} alt="Project Image" width="100" height="70" style={{'borderRadius':'5px'}}/></StyledTableCell>
                             <StyledTableCell><Link href={`/project/${id}`}>{projectName}</Link></StyledTableCell>
-                            <StyledTableCell><Image src={`/api/assets/${thumbnail}`} alt="Project Image" width="100" height="50" style={{'borderRadius':'5px'}}/></StyledTableCell>
                         </StyledTableRow>
                     ))}
                 </TableBody>

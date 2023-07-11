@@ -4,16 +4,6 @@ import path from 'node:path'
 import { readFile } from 'node:fs/promises'
 import imageType from 'image-type'
 
-const getBase64FromUrl = async (url) => {
-    const data = await readFile(url);
-    const b64 = data.toString('base64');
-    const type = await imageType(data);
-    if (type.mime === null) {
-      throw new Error(`image: ${url} type could not be found.`);
-    }
-    return `data:${type.mime};base64,${b64}`;
-};
-
 const getJSONList = async () => {
     const jsonDir = path.join(process.cwd(), 'json');
     return JSON.parse(await readFile(`${jsonDir}/projects.json`, { encoding: 'utf8' }))['projects'];
@@ -32,8 +22,7 @@ export async function getProjects() {
             projectName, 
             id,
             sheetFilePath,
-            thumbnail,
-            base64: await getBase64FromUrl(sheetFilePath)
+            thumbnail
         };
     }));
     return projects;

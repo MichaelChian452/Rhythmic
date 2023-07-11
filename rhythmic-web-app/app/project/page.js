@@ -1,7 +1,7 @@
 import styles from '../page.module.css'
 import ProjectsTable from '@/comps/ProjectsTable'
 
-import { getProjects } from '../../lib/utils'
+import { getProjects } from '@/lib/utils'
 
 export default async function Page() {
 

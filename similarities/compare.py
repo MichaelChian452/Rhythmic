@@ -1,6 +1,7 @@
 import numpy as np
 import json
 from decimal import *
+import xml.etree.ElementTree as ET
 from parse_musicxml import extract_element_tree, parse_et
 from classes import Note, ChordAndPosition, AllChords
 
@@ -73,7 +74,7 @@ def compare(file1: str, file2: str) -> list:
     while col > 0:
         col -= 1
         errors.insert(0, ('insert', list2.allChords[col]))
-    return formatOutput(errors, list1, list2)
+    return formatOutput(errors, list1, list2, tree1)
 
 
 def endBlock(delete: list[ChordAndPosition], insert: list[ChordAndPosition]) -> json:
@@ -109,7 +110,7 @@ def toJson(chord: ChordAndPosition, divisions: int) -> json:
     return to_return
     
 
-def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords) -> list:
+def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords, recording_tree: ET) -> list:
     to_return = []
     for error in errors:
         if error[0] == 'replace':

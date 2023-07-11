@@ -7,13 +7,13 @@ export default async function handler(req, res) {
     if (req.method !== 'GET') {
         return res.status(405).send('Method Not Allowed');
     };
-    
     const { filename } = req.query;
     if (!FILENAME_REGEX.test(filename)) {
         return res.status(400).send('Bad Request');
     }
 
     const filePath = path.join(process.cwd(), '/../', 'data', 'assets', filename);
+    console.log('api endpoint for thumbnail: ', filePath);
     try {
         const fileContent = await readFile(filePath);
         const mimeType = mime.getType(filePath);

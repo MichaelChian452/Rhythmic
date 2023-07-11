@@ -48,24 +48,15 @@ export const config = {
 
 const saveThumbnail = async (url) => {
     const splitFileName = path.basename(url).split('.');
-    console.log(splitFileName);
-    const fileName = `${splitFileName[0]}-thumbnail.${splitFileName.pop()}`
+    const fileName = `${splitFileName[0]}-thumbnail.${splitFileName.pop()}`;
     const filePath = path.join(process.cwd(), '/../', 'data', 'assets', fileName);
-    console.log('we are tryna save a thumbnail here: ', filePath);
-    // await Jimp.read(url)
-    //     .then((image) => {
-    //         console.log('are you even trying: ');
-    //         return image
-    //         .resize(Jimp.AUTO, 150) // resize
-    //         .quality(60) // set JPEG quality
-    //         .write(filePath); // save
-    //     })
-    //     .catch((err) => {
-    //         console.error(err);
-    //     });
-    sharp(url)
-        .resize({ height: 150 })
-        .toFile(filePath, (err, info) => { console.error(err) });
+    try {
+        await sharp(url)
+            .resize({ height: 150 })
+            .toFile(filePath);
+    } catch (e) {
+        console.log(e);
+    }
     return fileName;
 }
 
@@ -75,8 +66,7 @@ async function upload(req) {
     console.log(jsonDir);
     try {
         contents = JSON.parse(await readFile(`${jsonDir}/projects.json`, { encoding: 'utf8' }));
-    }
-    catch (e) {
+    } catch (e) {
         console.log(e);
         return;
     }
@@ -98,22 +88,15 @@ async function upload(req) {
                     id: (contents['projects'].length + 1).toString(),
                     recordings: []
                 };
-                // jsonObject['projectName'] = projectName;
-                // jsonObject['id'] = (contents['projects'].length + 1).toString();
-                // jsonObject['recordings'] = [];
-                // filePrefix = `${jsonObject['id']}`;
-                console.log('created new json obj for sheet music');
                 
                 const filePrefix = `${jsonObject.id}`;
                 const fName = `${filePrefix}-${name}-${random()}${getFileExtension(info.mimeType)}`;
                 saveTo = path.join(`${cwd()}/../data/sheet-music-input/${projectName}`, fName);
                 jsonObject.sheetFilePath = saveTo;
-            }
-            else {
+            } else {
                 const project = contents.projects.find(({ id }) => id === projectId);
                 projectName = project.projectName;
                 jsonObject.id = (project.recordings.length + 1).toString();
-                // filePrefix = `${projectId}-${jsonObject.id}`;
                 try {
                     fs.promises.mkdir(`${cwd()}/../data/audio-input/${projectName}`, { recursive: true });
                     console.log('created folder for audio-input for project');
@@ -122,26 +105,7 @@ async function upload(req) {
                     console.log(e);
                     reject(e);
                 }
-                console.log('created new json obj for recording to save in project');
-                // for(let key in contents['projects']) {
-                //     if (contents['projects'][key]['id'] === projectId) {
-                //         jsonObject['id'] = (contents['projects'][key]['recordings'].length + 1).toString();
-                //         filePrefix = `${projectId}-${jsonObject['id']}`;
-                //         projectName = contents['projects'][key]['projectName'];
-                //         try {
-                //             fs.promises.mkdir(`${cwd()}/../data/audio-input/${projectName}`, { recursive: true });
-                //             console.log('created folder for audio-input for project');
-                //         }
-                //         catch(e) {
-                //             console.log(e);
-                //             reject(e);
-                //         }
 
-                //         console.log('created new json obj for recording to save in project');
-                //         break;
-                //     }
-                // }
-                
                 const filePrefix = `${projectId}-${jsonObject.id}`;
                 const fName = `${filePrefix}-${name}-${random()}${getFileExtension(info.mimeType)}`;
                 saveTo = path.join(`${cwd()}/../data/audio-input/${projectName}`, fName);
@@ -151,8 +115,7 @@ async function upload(req) {
             try {
                 console.log('File [' + name + ']: filename: ' + info.filename, saveTo);
                 file.pipe(createWriteStream(saveTo));
-            }
-            catch (e) {
+            } catch (e) {
                 reject(e);
             }
         });
@@ -163,7 +126,6 @@ async function upload(req) {
                 projectName = value;
                 try {
                     fs.promises.mkdir(`${cwd()}/../data/sheet-music-input/${projectName}`, { recursive: true });
-                    console.log('updated value of projectName and created folder for it');
                 }
                 catch(e) {
                     console.log(e);
@@ -179,7 +141,9 @@ async function upload(req) {
             console.log('finished');
             let id;
             if (!isRecording) {
-                jsonObject.thumbnail = saveThumbnail(jsonObject.sheetFilePath);
+                saveThumbnail(jsonObject.sheetFilePath);
+                const splitFileName = path.basename(jsonObject.sheetFilePath).split('.');
+                jsonObject.thumbnail = `${splitFileName[0]}-thumbnail.${splitFileName.pop()}`;
                 id = writeToJSON(jsonObject, contents);
             }
             else {
@@ -201,18 +165,11 @@ async function writeToJSON(jsonObject, contents) {
         contents.projects.push(jsonObject);
 
         console.log('wrote sheet music to projects.json');
-    }
-    else {
-        const projId = jsonObject['id'];
-        const recording = jsonObject['jsonObject'];
-        contents['projects'].find(({ id }) => id === projId)['recordings'].push(recording);
+    } else {
+        const projId = jsonObject.id;
+        const recording = jsonObject.jsonObject;
+        contents.projects.find(({ id }) => id === projId)['recordings'].push(recording);
         console.log('wrote new recording to projects.json');
-        // for(let key in contents['projects']) {
-        //     if (contents['projects'][key]['id'] === id) {
-        //         contents['projects'][key]['recordings'].push(recording);
-        //         console.log('wrote new recording to projects.json');
-        //     }
-        // }
     }
     const jsonDir = path.join(process.cwd(), 'json');
     await writeFile(`${jsonDir}/projects.json`, JSON.stringify(contents, false, 4));
