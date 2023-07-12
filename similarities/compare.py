@@ -3,6 +3,7 @@ import json
 from decimal import *
 import xml.etree.ElementTree as ET
 from parse_musicxml import extract_element_tree, parse_et
+from generate_error_mxl import generate_mxl
 from classes import Note, ChordAndPosition, AllChords
 
 def is_different(div1: int, t1: Note, div2: int, t2: Note) -> bool: 
@@ -77,22 +78,26 @@ def compare(file1: str, file2: str) -> list:
     return formatOutput(errors, list1, list2, tree1)
 
 
-def endBlock(delete: list[ChordAndPosition], insert: list[ChordAndPosition]) -> json:
+def endBlock(delete: list, insert: list, recording: ET, sheet_music: ET) -> json:
     if len(insert) == 0 and len(delete) != 0:
         return ({
             'errorType': 'delete',
-            'delete': delete
+            'delete': delete,
+            'deleteMusicXML': generate_mxl(delete, None, recording, sheet_music)
         })
     elif len(insert) != 0 and len(delete) == 0:
         return ({
             'errorType': 'insert',
-            'insert': insert
+            'insert': insert,
+            'insertMusicXML': generate_mxl(None, insert, recording, sheet_music)
         })
     elif len(insert) != 0 and len(delete) != 0:
         return ({
             'errorType': 'replace',
             'delete': delete,
-            'insert': insert
+            'insert': insert, 
+            'deleteMusicXML': generate_mxl(delete, None, recording, sheet_music), 
+            'insertMusicXML': generate_mxl(None, insert, recording, sheet_music)
         })
     else:
         raise Exception('shits not a proper error')
@@ -110,7 +115,7 @@ def toJson(chord: ChordAndPosition, divisions: int) -> json:
     return to_return
     
 
-def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords, recording_tree: ET) -> list:
+def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords, recording_tree: ET, sheet_music_tree: ET) -> list:
     to_return = []
     for error in errors:
         if error[0] == 'replace':
@@ -137,7 +142,7 @@ def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords, record
             cur_error += 1
         else:
             if len(insert) != 0 or len(delete) != 0:
-                to_return.append(endBlock(delete, insert))
+                to_return.append(endBlock(delete, insert, recording_tree, sheet_music_tree))
             insert = []
             delete = []
         cur_rec_pos += 1
@@ -152,6 +157,6 @@ def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords, record
             delete.append(toJson(errors[cur_error][1], list1.divisions))
 
     if len(insert) != 0 or len(delete) != 0:
-        to_return.append(endBlock(delete, insert))
+        to_return.append(endBlock(delete, insert, recording_tree, sheet_music_tree))
 
     return to_return

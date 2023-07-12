@@ -66,7 +66,7 @@ class uploadHandler(FileSystemEventHandler):
                     found = False
                     for proj in parsedJson['projects']:
                         if proj['id'] == projectId:
-                            proj['sheet-music-mxl'] = filePath
+                            proj['sheetMusicXML'] = filePath
                             found = True
                             break
                     if not found:
@@ -89,9 +89,9 @@ class uploadHandler(FileSystemEventHandler):
                         if proj['id'] == projectId:
                             for recording in proj['recordings']:
                                 if recording['id'] == recordingId:
-                                    recording['recording-mxl'] = filePath
+                                    recording['recordingMusicXML'] = filePath
                                     found = True
-                                    recording['grade'] = self.runAndFormatSimilarityTest(proj['sheet-music-mxl'], filePath)
+                                    recording['grade'] = self.runAndFormatSimilarityTest(proj['sheetMusicXML'], filePath)
                                     break
                             break
                     if not found:

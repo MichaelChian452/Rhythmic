@@ -12,7 +12,7 @@ export default async function handler(req, res) {
         return res.status(400).send('Bad Request');
     }
 
-    const filePath = path.join(process.cwd(), '/../', 'data', 'assets', filename);
+    const filePath = path.join(process.cwd(), '/../', 'data', 'assets', 'thumbnails', filename);
     console.log('api endpoint for thumbnail: ', filePath);
     try {
         const fileContent = await readFile(filePath);

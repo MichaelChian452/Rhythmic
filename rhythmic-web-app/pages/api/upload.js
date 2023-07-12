@@ -49,7 +49,7 @@ export const config = {
 const saveThumbnail = async (url) => {
     const splitFileName = path.basename(url).split('.');
     const fileName = `${splitFileName[0]}-thumbnail.${splitFileName.pop()}`;
-    const filePath = path.join(process.cwd(), '/../', 'data', 'assets', fileName);
+    const filePath = path.join(process.cwd(), '/../', 'data', 'assets', 'thumbnails', fileName);
     try {
         await sharp(url)
             .resize({ height: 150 })
