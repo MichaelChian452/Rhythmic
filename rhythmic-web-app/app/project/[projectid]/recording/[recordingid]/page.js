@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Grading from '@/comps/Grading'
 
 import { getRecordingById } from '@/lib/utils';
-
 export default async function RecordingPage({ params }) {
     const startTime = Date.now();
     const { projectName, recording } = await getRecordingById(params.projectid, params.recordingid);

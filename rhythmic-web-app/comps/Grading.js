@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from 'react';
+import Mistake from './DisplayMistake';
 
 import styles from './styles.module.css'
 
@@ -19,21 +20,19 @@ function getErrorTitle(error) {
     }
 }
 
-function getDeleteNotes(error) {
+function getDeleteNotes(error, id) {
     if (error.hasOwnProperty('delete')) {
         let s = '';
         console.log('err: ' + JSON.stringify(error));
-        console.log('delete: ' + JSON.stringify(error['delete'][0]));
         for (let i in error['delete']) {
-            console.log(i);
             for (let j in error['delete'][i]['notes']) {
                 s += JSON.stringify(error['delete'][i]['notes'][j]['note']) + ' ' + error['delete'][i]['notes'][j]['duration'] + ' ';
             }
-            console.log(s);
         }
         return (
             <div>
                 {s}
+                <Mistake id={`delete-${id}`} filePath={error['deleteMusicXML']} />
             </div>
         );
     }
@@ -42,8 +41,9 @@ function getDeleteNotes(error) {
     }
 }
 
-function getInsertNotes(error) {
+function getInsertNotes(error, id) {
     if (error.hasOwnProperty('insert')) {
+        console.log('err: ' + JSON.stringify(error));
         let s = '';
         for (let i in error['insert']) {
             for (let j in error['insert'][i]['notes']) {
@@ -51,8 +51,9 @@ function getInsertNotes(error) {
             }
         }
         return (
-            <div>
+            <div className={styles.test}>
                 {s}
+                <Mistake id={`insert-${id}`} filePath={error['insertMusicXML']} />
             </div>
         );
     }
@@ -61,19 +62,17 @@ function getInsertNotes(error) {
     }
 }
 
-
-export default function RecordingsTable(data) {
-
+export default function MistakeTable(data) {
     const [errors, setErrors] = useState(data['data']);
 
     return (
         <div className="grade-container">
-            {errors.map((error) => (
-                <div>
+            {errors.map((error, index) => (
+                <div key={index}>
                     {getErrorTitle(error)}
                     <div className={styles.vertFlexTable}>
-                        {getDeleteNotes(error)}
-                        {getInsertNotes(error)}
+                        {getDeleteNotes(error, index)}
+                        {getInsertNotes(error, index)}
                     </div>
                 </div>
             ))}

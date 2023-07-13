@@ -255,7 +255,9 @@
                                         }
                                     ]
                                 }
-                            ]
+                            ], 
+                            "deleteMusicXML": "39ff9550-2077-11ee-89af-34cff6db2df5.xml",
+                            "insertMusicXML": "9bd3c157-2073-11ee-a1b2-34cff6db2df5.xml"
                         },
                         {
                             "errorType": "replace",
@@ -322,7 +324,9 @@
                                         }
                                     ]
                                 }
-                            ]
+                            ], 
+                            "deleteMusicXML": "39ff9550-2077-11ee-89af-34cff6db2df5.xml",
+                            "insertMusicXML": "9bd3c157-2073-11ee-a1b2-34cff6db2df5.xml"
                         }
                     ]
                 },

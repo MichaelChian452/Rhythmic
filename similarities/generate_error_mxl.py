@@ -53,11 +53,11 @@ def generate_mxl(delete: list, insert: list, recording: ET, sheet_music: ET) -> 
     print('successfully wrote error et to path')
     return file_name
 
-# path = os.path.dirname(os.path.abspath(__file__)) + '/../rhythmic-web-app/json/projects.json'
-# with open(path, 'r') as f:
-#     data = json.load(f)
-# del_err = data['projects'][1]['recordings'][0]['grade'][0]['delete']
-# ins_err = data['projects'][1]['recordings'][0]['grade'][0]['insert']
-# rec = extract_element_tree('C:\\Users\\Michael\\Documents\\rhythmic\\data\\mscore-output\\3-2-recording-0818823d563bf6882fa3d1da199167c2.musicxml')
-# sm = extract_element_tree("C:\\Users\\Michael\\Documents\\rhythmic\\data\\audiveris-output\\3-sheet-music-img-f270347ac6e776f9f786763f015d2dfb.mxl")
-# generate_mxl(None, ins_err, rec, sm)
+path = os.path.dirname(os.path.abspath(__file__)) + '/../rhythmic-web-app/json/projects.json'
+with open(path, 'r') as f:
+    data = json.load(f)
+del_err = data['projects'][1]['recordings'][0]['grade'][0]['delete']
+ins_err = data['projects'][1]['recordings'][0]['grade'][0]['insert']
+rec = extract_element_tree('C:\\Users\\Michael\\Documents\\rhythmic\\data\\mscore-output\\3-2-recording-0818823d563bf6882fa3d1da199167c2.musicxml')
+sm = extract_element_tree("C:\\Users\\Michael\\Documents\\rhythmic\\data\\audiveris-output\\3-sheet-music-img-f270347ac6e776f9f786763f015d2dfb.mxl")
+generate_mxl(del_err, None, rec, sm)
