@@ -1,5 +1,18 @@
 {
     "version": "1",
     "projects": [
+        {
+            "projectName": "oompa",
+            "id": "1",
+            "recordings": [
+                {
+                    "id": "1",
+                    "recordingFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audio-input\\oompa\\1-1-recording-7eada030c5990841c387455afda5ac4d.m4a"
+                }
+            ],
+            "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\oompa\\1-sheet-music-img-3930696950f890fb151fe38f855e2db3.jpeg",
+            "thumbnail": "1-sheet-music-img-3930696950f890fb151fe38f855e2db3-thumbnail.jpeg",
+            "sheetMusicXML": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audiveris-output\\1-sheet-music-img-3930696950f890fb151fe38f855e2db3.mxl"
+        }
     ]
 }
