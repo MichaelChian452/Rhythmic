@@ -14,13 +14,11 @@ export default async function handler(req, res) {
     const filePath = path.join(process.cwd(), '/../', 'data', 'assets', 'errors', filename + '.xml');
     console.log('api endpoint for mistake: ', filePath);
     try {
-        // const reader = new FileReader();
-        // const fileContent = reader.readAsText(filePath);
         const fileContent = await readFile(filePath, { encoding: 'utf8' });
         const mimeType = mime.getType(filePath);
-        // if (mimeType !== 'application/xml') {
-        //     return res.status(400).send('Bad Request');
-        // }
+        if (mimeType !== 'application/xml') {
+            return res.status(400).send('Bad Request');
+        }
         res.setHeader('Content-Type', mimeType);
         // res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
         res.send({ 'fileContent': fileContent });

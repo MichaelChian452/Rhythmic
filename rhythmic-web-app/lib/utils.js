@@ -11,17 +11,24 @@ const getJSONList = async () => {
 
 export async function getProjectById(projectId) {
     const jsonList = await getJSONList();
-    return jsonList.find(({ id }) => id === projectId);
+    const {projectName, id, recordings} = jsonList.find(({ id }) => id === projectId);
+    const recordingsIDs = recordings.map(({id}) => {
+        return {id};
+    });
+    return {
+        projectName,
+        id, 
+        recordingsIDs
+    };
 }
 
 export async function getProjects() {
     console.log('get projects');
     const jsonList = await getJSONList();
-    const projects = Promise.all(jsonList.map(async ({ projectName, id, sheetFilePath, thumbnail }) => {
+    const projects = Promise.all(jsonList.map(async ({ projectName, id, thumbnail }) => {
         return {
             projectName, 
             id,
-            sheetFilePath,
             thumbnail
         };
     }));
@@ -30,10 +37,11 @@ export async function getProjects() {
 
 export async function getRecordingById(projectId, recordingId) {
     console.log('get recording from project id:', projectId, 'recording id:', recordingId);
-    const { projectName, recordings } = await getProjectById(projectId);
+    const jsonList = await getJSONList();
+    const {projectName, recordings} = jsonList.find(({ id }) => id === projectId);
     const recording = recordings.find(({ id }) => id === recordingId);
     return {
         projectName, 
         recording
-    }
+    };
 }

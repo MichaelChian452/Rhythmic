@@ -3,15 +3,14 @@ import OSMD from 'opensheetmusicdisplay';
 
 import Box from '@mui/material/Box'
 
-export default function Mistake({id, filePath}) {
+export default function Mistake({filePath}) {
+    const sheetMusicDiv = useRef();
     const [file, setFile] = useState(filePath);
 
     useEffect(() => {
         const osmd = new OSMD.OpenSheetMusicDisplay(
-            `sheet-music-display-${id}`,
+            sheetMusicDiv.current,
             {
-                newPageFromXML: true,
-                newSystemFromXML: true,
                 followCursor: true,
                 autoResize: true,
                 drawTitle: false
@@ -35,7 +34,7 @@ export default function Mistake({id, filePath}) {
   
     return (
         <Box component="main">
-            <div id={`sheet-music-display-${id}`}>
+            <div ref={sheetMusicDiv}>
 
             </div>
         </Box>

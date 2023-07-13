@@ -37,7 +37,7 @@ export default function RecordingsTable(data) {
     const [recordings, setRecordings] = useState(data['data']);
 
     const projectPath = usePathname();
-
+    console.log('RecordingsTable recordings=', recordings);
     return (
         <TableContainer sx={{ maxHeight: 440 }}>
             <Table aria-label="customized table">

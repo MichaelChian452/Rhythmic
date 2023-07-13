@@ -7,7 +7,7 @@ import RecordingUploadForm from '@/comps/RecordingUploadForm'
 export default async function ProjectPage({ params }) {
     const startTime = Date.now();
     const project = await getProjectById(params.projectid);
-    const { projectName, id, recordings } = project;
+    const { projectName, id, recordingsIDs } = project;
 
     console.log('project page: ', project);
     console.log('getProjectById() took: ', Date.now() - startTime, ' milliseconds to complete');
@@ -19,11 +19,11 @@ export default async function ProjectPage({ params }) {
             {/* <Image src= {sheetImg} alt="your sheet music upload."/> */}
             bruh
         </div>
-        <p>Add a recording to begin comparing</p>
+        <p>Upload a new recording to begin comparing</p>
         <RecordingUploadForm id={id}/>
         <div>
           Previous Recordings:
-          <RecordingsTable data={recordings} />
+          <RecordingsTable data={recordingsIDs} />
         </div>
         <Link href="/">Return to Home</Link>
       </main>
