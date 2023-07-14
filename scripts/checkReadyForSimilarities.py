@@ -40,11 +40,11 @@ class uploadHandler(FileSystemEventHandler):
             return True
         return False
     
-    def runAndFormatSimilarityTest(self, file1: str, file2: str):
+    def runAndFormatSimilarityTest(self, file1: str, file2: str) -> tuple[str, list]:
         # file1 = sheet music xml, file2 = audio xml
         res = compare(file2, file1)
         print('---------- returned to watcher --------------')
-        for error in res:
+        for error in res[1]:
             print(error)
         return res
 
@@ -91,7 +91,9 @@ class uploadHandler(FileSystemEventHandler):
                                 if recording['id'] == recordingId:
                                     recording['recordingMusicXML'] = filePath
                                     found = True
-                                    recording['grade'] = self.runAndFormatSimilarityTest(proj['sheetMusicXML'], filePath)
+                                    output = self.runAndFormatSimilarityTest(proj['sheetMusicXML'], filePath)
+                                    recording['grade'] = output[0]
+                                    recording['mistakes'] = output[1]
                                     break
                             break
                     if not found:

@@ -12,8 +12,10 @@ export default function Mistake({filePath}) {
             sheetMusicDiv.current,
             {
                 followCursor: true,
-                autoResize: true,
-                drawTitle: false
+                autoResize: false,
+                drawTitle: false,
+                drawPartNames: false,
+                useXMLMeasureNumbers: false
             }
         );
         const loadFilePromise = loadFile(osmd, file);
@@ -28,15 +30,14 @@ export default function Mistake({filePath}) {
         const response = await fetch(`/api/assets/mistakes/${filePath.split('.')[0]}`);
         const file = await response.json();
         const xml = file.fileContent;
+        console.log(filePath);
         await osmd.load(xml);
         await osmd.render();
     }
   
     return (
-        <Box component="main">
-            <div ref={sheetMusicDiv}>
+        <div style={{minWidth: '1000px'}} ref={sheetMusicDiv}>
 
-            </div>
-        </Box>
+        </div>
     )
   }

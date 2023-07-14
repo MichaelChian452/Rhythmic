@@ -7,7 +7,1885 @@
             "recordings": [
                 {
                     "id": "1",
-                    "recordingFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audio-input\\oompa\\1-1-recording-7eada030c5990841c387455afda5ac4d.m4a"
+                    "recordingFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audio-input\\oompa\\1-1-recording-7eada030c5990841c387455afda5ac4d.m4a",
+                    "recordingMusicXML": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\mscore-output\\1-1-recording-7eada030c5990841c387455afda5ac4d.musicxml",
+                    "grade": "0.047619047619047616",
+                    "mistakes": [
+                        {
+                            "errorType": "replace",
+                            "delete": [
+                                {
+                                    "measure": 1,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 1,
+                                            "note": "D5"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "insert": [
+                                {
+                                    "measure": 1,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "deleteMusicXML": "d46b9b2f-21cd-11ee-8c0d-34cff6db2df5.xml",
+                            "insertMusicXML": "d469db95-21cd-11ee-9eab-34cff6db2df5.xml"
+                        },
+                        {
+                            "errorType": "replace",
+                            "delete": [
+                                {
+                                    "measure": 1,
+                                    "startBeat": 2,
+                                    "notes": [
+                                        {
+                                            "duration": 1,
+                                            "note": "D5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 1,
+                                    "startBeat": 3,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "B6"
+                                        },
+                                        {
+                                            "duration": 1,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 1,
+                                    "startBeat": 3.6666666666666665,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 2,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 1,
+                                            "note": "B4"
+                                        },
+                                        {
+                                            "duration": 1,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 2,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 1.5,
+                                            "note": "B6"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 1,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 1,
+                                    "notes": [
+                                        {
+                                            "duration": 1,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 2,
+                                    "notes": [
+                                        {
+                                            "duration": 1,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 3,
+                                    "notes": [
+                                        {
+                                            "duration": 1,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.6666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 0.6666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 1,
+                                    "notes": [
+                                        {
+                                            "duration": 0.5,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 1.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.5,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 2,
+                                    "notes": [
+                                        {
+                                            "duration": 2,
+                                            "note": "G4"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "insert": [
+                                {
+                                    "measure": 1,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 1,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 2,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 2,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 2,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "G4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 5,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 5,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 5,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 6,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C3"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 6,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 7,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 7,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 7,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 7,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 8,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 8,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 8,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 8,
+                                    "startBeat": 0.5,
+                                    "notes": []
+                                },
+                                {
+                                    "measure": 9,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "G2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 9,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 9,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "B2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 9,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 9,
+                                    "startBeat": 0.6666666666666666,
+                                    "notes": []
+                                },
+                                {
+                                    "measure": 10,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.6666666666666666,
+                                            "note": "A2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 10,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 10,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "A4"
+                                        },
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 10,
+                                    "startBeat": 0.6666666666666666,
+                                    "notes": []
+                                },
+                                {
+                                    "measure": 11,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 11,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 11,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 11,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 12,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.6666666666666666,
+                                            "note": "G2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 12,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 12,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 12,
+                                    "startBeat": 0.6666666666666666,
+                                    "notes": []
+                                },
+                                {
+                                    "measure": 13,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "G2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 13,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 13,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "B2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 13,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 13,
+                                    "startBeat": 0.6666666666666666,
+                                    "notes": []
+                                },
+                                {
+                                    "measure": 14,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.6666666666666666,
+                                            "note": "A2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 14,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 14,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "A4"
+                                        },
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 14,
+                                    "startBeat": 0.6666666666666666,
+                                    "notes": []
+                                },
+                                {
+                                    "measure": 15,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 15,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 15,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 15,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 16,
+                                    "startBeat": 0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 16,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 16,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 16,
+                                    "startBeat": 0.5,
+                                    "notes": []
+                                }
+                            ],
+                            "deleteMusicXML": "d4698b14-21cd-11ee-87f0-34cff6db2df5.xml",
+                            "insertMusicXML": "d46beaf8-21cd-11ee-be59-34cff6db2df5.xml"
+                        }
+                    ]
+                },
+                {
+                    "id": "2",
+                    "recordingFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audio-input\\oompa\\1-2-recording-34eb6c76e3fe15f4637f32743f02ce0c.m4a",
+                    "recordingMusicXML": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\mscore-output\\1-2-recording-34eb6c76e3fe15f4637f32743f02ce0c.musicxml",
+                    "grade": "0.047619047619047616",
+                    "mistakes": [
+                        {
+                            "errorType": "replace",
+                            "delete": [
+                                {
+                                    "measure": 1,
+                                    "startBeat": 2.0,
+                                    "notes": [
+                                        {
+                                            "duration": 1.0,
+                                            "note": "D5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 1,
+                                    "startBeat": 3.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "B6"
+                                        },
+                                        {
+                                            "duration": 1.0,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 1,
+                                    "startBeat": 3.6666666666666665,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 2,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 1.0,
+                                            "note": "B4"
+                                        },
+                                        {
+                                            "duration": 1.0,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 2,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 1.5,
+                                            "note": "B6"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 1.0,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 1.0,
+                                    "notes": [
+                                        {
+                                            "duration": 1.0,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 2.0,
+                                    "notes": [
+                                        {
+                                            "duration": 1.0,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 3.0,
+                                    "notes": [
+                                        {
+                                            "duration": 1.0,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.6666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 0.6666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 1.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.5,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 1.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.5,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 2.0,
+                                    "notes": [
+                                        {
+                                            "duration": 2.0,
+                                            "note": "G4"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "insert": [
+                                {
+                                    "measure": 1,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 1,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 2,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 2,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 2,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 3,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 4,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "G4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 5,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 5,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 5,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 6,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C3"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 6,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 7,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 7,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 7,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 7,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 8,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 8,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 8,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 8,
+                                    "startBeat": 0.5,
+                                    "notes": []
+                                },
+                                {
+                                    "measure": 9,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "G2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 9,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 9,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "B2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 9,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 9,
+                                    "startBeat": 0.6666666666666666,
+                                    "notes": []
+                                },
+                                {
+                                    "measure": 10,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.6666666666666666,
+                                            "note": "A2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 10,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 10,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "A4"
+                                        },
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 10,
+                                    "startBeat": 0.6666666666666666,
+                                    "notes": []
+                                },
+                                {
+                                    "measure": 11,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 11,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 11,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 11,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 12,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.6666666666666666,
+                                            "note": "G2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 12,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 12,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 12,
+                                    "startBeat": 0.6666666666666666,
+                                    "notes": []
+                                },
+                                {
+                                    "measure": 13,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "G2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 13,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 13,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "B2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 13,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 13,
+                                    "startBeat": 0.6666666666666666,
+                                    "notes": []
+                                },
+                                {
+                                    "measure": 14,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.6666666666666666,
+                                            "note": "A2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 14,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 14,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "A4"
+                                        },
+                                        {
+                                            "duration": 0.3333333333333333,
+                                            "note": "C5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 14,
+                                    "startBeat": 0.6666666666666666,
+                                    "notes": []
+                                },
+                                {
+                                    "measure": 15,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 15,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "C3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 15,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 15,
+                                    "startBeat": 0.5,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "A2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 16,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 16,
+                                    "startBeat": 0.16666666666666666,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "B4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 16,
+                                    "startBeat": 0.3333333333333333,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G4"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "measure": 16,
+                                    "startBeat": 0.5,
+                                    "notes": []
+                                }
+                            ],
+                            "deleteMusicXML": "2dbe9901-220b-11ee-8258-34cff6db2df5.xml",
+                            "insertMusicXML": "2dc2f605-220b-11ee-8267-34cff6db2df5.xml"
+                        },
+                        {
+                            "errorType": "replace",
+                            "delete": [
+                                {
+                                    "measure": 1,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 1.0,
+                                            "note": "D5"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "insert": [
+                                {
+                                    "measure": 1,
+                                    "startBeat": 0.0,
+                                    "notes": [
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D5"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "G2"
+                                        },
+                                        {
+                                            "duration": 0.16666666666666666,
+                                            "note": "D3"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "deleteMusicXML": "2dbe9901-220b-11ee-8258-34cff6db2df5.xml",
+                            "insertMusicXML": "2dbf0d74-220b-11ee-85e3-34cff6db2df5.xml"
+                        }
+                    ]
                 }
             ],
             "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\oompa\\1-sheet-music-img-3930696950f890fb151fe38f855e2db3.jpeg",

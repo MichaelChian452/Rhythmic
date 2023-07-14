@@ -29,12 +29,12 @@ def parse_et(root: ET) -> AllChords:
     allnotes = []
     measure_num = 1
     divisions = -1 # the number of divisons to one quarter note throughout this piece
-    key = 0 # key measured in fifths, ie 0 = C, 1 = G, -1 = F, etc
+    # key = 0 # key measured in fifths, ie 0 = C, 1 = G, -1 = F, etc
     for part in root.findall('part'):
         for measure in part.findall('measure'):
             if measure_num == 1:
                 divisions = int(measure.find('attributes').find('divisions').text)
-                key = int(measure.find('attributes').find('key').find('fifths').text)
+                # key = int(measure.find('attributes').find('key').find('fifths').text)
             voice = 1
             duration = 0
             prev_added_duration = 0

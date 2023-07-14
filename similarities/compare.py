@@ -50,6 +50,8 @@ def compare(file1: str, file2: str) -> list:
 
     row = len(list1.allChords) # begin backtrack to determine where errors were made and return list
     col = len(list2.allChords)
+    
+    levenshtein_distance = str(float(1 - Decimal(table[(row, col)]) / Decimal(len(list2.allChords)))) # levenshtein distance value
     errors = []
     while row > 0 and col > 0:
         diag = table[(row - 1, col - 1)]
@@ -75,29 +77,36 @@ def compare(file1: str, file2: str) -> list:
     while col > 0:
         col -= 1
         errors.insert(0, ('insert', list2.allChords[col]))
-    return formatOutput(errors, list1, list2, tree1)
+    return formatOutput(errors, list1, list2, tree1, tree2, levenshtein_distance)
 
 
 def endBlock(delete: list, insert: list, recording: ET, sheet_music: ET) -> json:
     if len(insert) == 0 and len(delete) != 0:
+        delete_mxl = generate_mxl(delete, None, recording, sheet_music)
+        print('delete error: ' + delete_mxl)
         return ({
             'errorType': 'delete',
             'delete': delete,
-            'deleteMusicXML': generate_mxl(delete, None, recording, sheet_music)
+            'deleteMusicXML': delete_mxl
         })
     elif len(insert) != 0 and len(delete) == 0:
+        insert_mxl = generate_mxl(None, insert, recording, sheet_music)
+        print('insert error: ' + insert_mxl)
         return ({
             'errorType': 'insert',
             'insert': insert,
-            'insertMusicXML': generate_mxl(None, insert, recording, sheet_music)
+            'insertMusicXML': insert_mxl
         })
     elif len(insert) != 0 and len(delete) != 0:
+        delete_mxl = generate_mxl(delete, None, recording, sheet_music)
+        insert_mxl = generate_mxl(None, insert, recording, sheet_music)
+        print('replace error: ' + delete_mxl + ' ' + insert_mxl)
         return ({
             'errorType': 'replace',
             'delete': delete,
             'insert': insert, 
-            'deleteMusicXML': generate_mxl(delete, None, recording, sheet_music), 
-            'insertMusicXML': generate_mxl(None, insert, recording, sheet_music)
+            'deleteMusicXML': delete_mxl,
+            'insertMusicXML': insert_mxl
         })
     else:
         raise Exception('shits not a proper error')
@@ -115,7 +124,7 @@ def toJson(chord: ChordAndPosition, divisions: int) -> json:
     return to_return
     
 
-def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords, recording_tree: ET, sheet_music_tree: ET) -> list:
+def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords, recording_tree: ET, sheet_music_tree: ET, grade: str) -> tuple[str, list]:
     to_return = []
     for error in errors:
         if error[0] == 'replace':
@@ -131,6 +140,7 @@ def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords, record
     insert = []
     delete = []
     while cur_error < len(errors) and cur_rec_pos < len(list1.allChords):
+        print('cur_error: ' + str(cur_error) + ' cur_rec_pos: ' + str(cur_rec_pos))
         if notes_is_same(list1.divisions, errors[cur_error][1], list1.divisions, list1.allChords[cur_rec_pos]):
             if errors[cur_error][0] == 'replace':
                 insert.append(toJson(errors[cur_error][2], list1.divisions))
@@ -146,7 +156,6 @@ def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords, record
             insert = []
             delete = []
         cur_rec_pos += 1
-    
     while cur_error < len(errors):
         if errors[cur_error][0] == 'replace':
             insert.append(toJson(errors[cur_error][2], list1.divisions))
@@ -155,8 +164,9 @@ def formatOutput(errors: list[tuple], list1: AllChords, list2: AllChords, record
             insert.append(toJson(errors[cur_error][1], list1.divisions))
         elif errors[cur_error][0] == 'delete':
             delete.append(toJson(errors[cur_error][1], list1.divisions))
+        cur_error += 1
 
     if len(insert) != 0 or len(delete) != 0:
         to_return.append(endBlock(delete, insert, recording_tree, sheet_music_tree))
 
-    return to_return
+    return (grade, to_return)

@@ -16,7 +16,8 @@ export default async function handler(req, res) {
     try {
         const fileContent = await readFile(filePath, { encoding: 'utf8' });
         const mimeType = mime.getType(filePath);
-        if (mimeType !== 'application/xml') {
+        console.log(mimeType)
+        if (mimeType !== 'application/xml' && mimeType !== 'application/vnd.recordare.musicxml+xml') {
             return res.status(400).send('Bad Request');
         }
         res.setHeader('Content-Type', mimeType);

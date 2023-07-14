@@ -6,7 +6,7 @@ import uuid
 from parse_musicxml import extract_element_tree
 
 def generate_mxl(delete: list, insert: list, recording: ET, sheet_music: ET) -> str:
-    # metadata = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 4.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">\n'
+    metadata = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 4.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">\n'
     root = ET.Element('score-partwise')
     init_measure = -1
     end_measure = -1
@@ -47,10 +47,11 @@ def generate_mxl(delete: list, insert: list, recording: ET, sheet_music: ET) -> 
     assets_file_path = os.path.dirname(os.path.abspath(__file__)) + '/../data/assets/errors/'
     file_name = str(uuid.uuid1()) + '.xml'
     full_path = assets_file_path + file_name
-    print(full_path)
     tree = ET.ElementTree(root)
-    tree.write(full_path)
-    print('successfully wrote error et to path')
+    with open(full_path, mode='w') as f:
+        f.write(metadata)
+        tree.write(f, encoding='unicode')
+    print('successfully wrote error et to path: ' + full_path)
     return file_name
 
 # path = os.path.dirname(os.path.abspath(__file__)) + '/../rhythmic-web-app/json/projects.json'

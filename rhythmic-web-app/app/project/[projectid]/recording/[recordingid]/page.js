@@ -18,7 +18,7 @@ export default async function RecordingPage({ params }) {
         </div>
         <div>
           Detailed overview:
-          <Grading data={recording.grade} />
+          <Grading data={recording.mistakes} />
         </div>
         <Link href="/">Return to Home</Link>
       </main>

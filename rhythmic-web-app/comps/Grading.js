@@ -20,7 +20,7 @@ function getErrorTitle(error) {
     }
 }
 
-function getDeleteNotes(error, id) {
+function getDeleteNotes(error) {
     if (error.hasOwnProperty('delete')) {
         let s = '';
         console.log('err: ' + JSON.stringify(error));
@@ -32,7 +32,7 @@ function getDeleteNotes(error, id) {
         return (
             <div>
                 {s}
-                <Mistake id={`delete-${id}`} filePath={error['deleteMusicXML']} />
+                <Mistake filePath={error['deleteMusicXML']} />
             </div>
         );
     }
@@ -41,7 +41,7 @@ function getDeleteNotes(error, id) {
     }
 }
 
-function getInsertNotes(error, id) {
+function getInsertNotes(error) {
     if (error.hasOwnProperty('insert')) {
         console.log('err: ' + JSON.stringify(error));
         let s = '';
@@ -53,7 +53,7 @@ function getInsertNotes(error, id) {
         return (
             <div className={styles.test}>
                 {s}
-                <Mistake id={`insert-${id}`} filePath={error['insertMusicXML']} />
+                <Mistake filePath={error['insertMusicXML']} />
             </div>
         );
     }
@@ -71,8 +71,8 @@ export default function MistakeTable(data) {
                 <div key={index}>
                     {getErrorTitle(error)}
                     <div className={styles.vertFlexTable}>
-                        {getDeleteNotes(error, index)}
-                        {getInsertNotes(error, index)}
+                        {getDeleteNotes(error)}
+                        {getInsertNotes(error)}
                     </div>
                 </div>
             ))}
