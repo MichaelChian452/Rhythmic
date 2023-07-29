@@ -12,6 +12,28 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
+import gradeStyles from './gradeStyles.module.css';
+
+function getGrade(grade) {
+    const roundedGrade = grade.match(/^-?\d+(?:\.\d{0,3})?/)[0]
+    const val = parseFloat(roundedGrade) * 100;
+    let color = "red";
+    if (val <= 40) {
+        color = "red";
+    } else if (val > 40 && val <= 60) {
+        color = "yellow";
+    } else if (val > 60 && val <= 90) {
+        color = "LightGreen";
+    } else {
+        color = "green";
+    }
+    return (
+        <div className={gradeStyles.grade} style={{"background-color": color}}>
+            {val}
+        </div>
+    );
+}
+
 export default function RecordingsTable(data) {
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -48,10 +70,10 @@ export default function RecordingsTable(data) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {recordings.map(({ id }) => (
+                    {recordings.map(({ id, grade }) => (
                         <StyledTableRow key={id}>
                             <StyledTableCell><Link href={`${projectPath}/recording/${id}`}>{id}</Link></StyledTableCell>
-                            <StyledTableCell>Grade</StyledTableCell>
+                            <StyledTableCell>{getGrade(grade)}</StyledTableCell>
                         </StyledTableRow>
                     ))}
                 </TableBody>

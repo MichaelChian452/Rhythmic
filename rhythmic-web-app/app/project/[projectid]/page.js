@@ -7,7 +7,7 @@ import RecordingUploadForm from '@/comps/RecordingUploadForm'
 export default async function ProjectPage({ params }) {
     const startTime = Date.now();
     const project = await getProjectById(params.projectid);
-    const { projectName, id, recordingsIDs } = project;
+    const { projectName, id, recordingsIDsGrades } = project;
 
     console.log('project page: ', project);
     console.log('getProjectById() took: ', Date.now() - startTime, ' milliseconds to complete');
@@ -23,7 +23,7 @@ export default async function ProjectPage({ params }) {
         <RecordingUploadForm id={id}/>
         <div>
           Previous Recordings:
-          <RecordingsTable data={recordingsIDs} />
+          <RecordingsTable data={recordingsIDsGrades} />
         </div>
         <Link href="/">Return to Home</Link>
       </main>

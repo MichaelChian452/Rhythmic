@@ -957,24 +957,24 @@
                             "delete": [
                                 {
                                     "measure": 1,
-                                    "startBeat": 2.0,
+                                    "startBeat": 2,
                                     "notes": [
                                         {
-                                            "duration": 1.0,
+                                            "duration": 1,
                                             "note": "D5"
                                         }
                                     ]
                                 },
                                 {
                                     "measure": 1,
-                                    "startBeat": 3.0,
+                                    "startBeat": 3,
                                     "notes": [
                                         {
                                             "duration": 0.3333333333333333,
                                             "note": "B6"
                                         },
                                         {
-                                            "duration": 1.0,
+                                            "duration": 1,
                                             "note": "B4"
                                         }
                                     ]
@@ -991,14 +991,14 @@
                                 },
                                 {
                                     "measure": 2,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
-                                            "duration": 1.0,
+                                            "duration": 1,
                                             "note": "B4"
                                         },
                                         {
-                                            "duration": 1.0,
+                                            "duration": 1,
                                             "note": "C5"
                                         }
                                     ]
@@ -1015,47 +1015,47 @@
                                 },
                                 {
                                     "measure": 3,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
-                                            "duration": 1.0,
+                                            "duration": 1,
                                             "note": "C5"
                                         }
                                     ]
                                 },
                                 {
                                     "measure": 3,
-                                    "startBeat": 1.0,
+                                    "startBeat": 1,
                                     "notes": [
                                         {
-                                            "duration": 1.0,
+                                            "duration": 1,
                                             "note": "A4"
                                         }
                                     ]
                                 },
                                 {
                                     "measure": 3,
-                                    "startBeat": 2.0,
+                                    "startBeat": 2,
                                     "notes": [
                                         {
-                                            "duration": 1.0,
+                                            "duration": 1,
                                             "note": "C5"
                                         }
                                     ]
                                 },
                                 {
                                     "measure": 3,
-                                    "startBeat": 3.0,
+                                    "startBeat": 3,
                                     "notes": [
                                         {
-                                            "duration": 1.0,
+                                            "duration": 1,
                                             "note": "A4"
                                         }
                                     ]
                                 },
                                 {
                                     "measure": 4,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.6666666666666666,
@@ -1075,7 +1075,7 @@
                                 },
                                 {
                                     "measure": 4,
-                                    "startBeat": 1.0,
+                                    "startBeat": 1,
                                     "notes": [
                                         {
                                             "duration": 0.5,
@@ -1095,10 +1095,10 @@
                                 },
                                 {
                                     "measure": 4,
-                                    "startBeat": 2.0,
+                                    "startBeat": 2,
                                     "notes": [
                                         {
-                                            "duration": 2.0,
+                                            "duration": 2,
                                             "note": "G4"
                                         }
                                     ]
@@ -1135,7 +1135,7 @@
                                 },
                                 {
                                     "measure": 2,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -1173,7 +1173,7 @@
                                 },
                                 {
                                     "measure": 3,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -1229,7 +1229,7 @@
                                 },
                                 {
                                     "measure": 4,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -1267,7 +1267,7 @@
                                 },
                                 {
                                     "measure": 5,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -1313,7 +1313,7 @@
                                 },
                                 {
                                     "measure": 6,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -1341,7 +1341,7 @@
                                 },
                                 {
                                     "measure": 7,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -1397,7 +1397,7 @@
                                 },
                                 {
                                     "measure": 8,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -1456,7 +1456,7 @@
                                 },
                                 {
                                     "measure": 9,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.3333333333333333,
@@ -1509,7 +1509,7 @@
                                 },
                                 {
                                     "measure": 10,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.6666666666666666,
@@ -1552,7 +1552,7 @@
                                 },
                                 {
                                     "measure": 11,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -1592,7 +1592,7 @@
                                 },
                                 {
                                     "measure": 12,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.6666666666666666,
@@ -1635,7 +1635,7 @@
                                 },
                                 {
                                     "measure": 13,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.3333333333333333,
@@ -1688,7 +1688,7 @@
                                 },
                                 {
                                     "measure": 14,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.6666666666666666,
@@ -1731,7 +1731,7 @@
                                 },
                                 {
                                     "measure": 15,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -1787,7 +1787,7 @@
                                 },
                                 {
                                     "measure": 16,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -1853,10 +1853,10 @@
                             "delete": [
                                 {
                                     "measure": 1,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
-                                            "duration": 1.0,
+                                            "duration": 1,
                                             "note": "D5"
                                         }
                                     ]
@@ -1865,7 +1865,7 @@
                             "insert": [
                                 {
                                     "measure": 1,
-                                    "startBeat": 0.0,
+                                    "startBeat": 0,
                                     "notes": [
                                         {
                                             "duration": 0.16666666666666666,
@@ -1886,6 +1886,11 @@
                             "insertMusicXML": "2dbf0d74-220b-11ee-85e3-34cff6db2df5.xml"
                         }
                     ]
+                },
+                {
+                    "id": "3",
+                    "recordingFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\audio-input\\oompa\\1-3-recording-d0e88d125072e058be15e467ebf15413.m4a",
+                    "grade": "0.45"
                 }
             ],
             "sheetFilePath": "C:\\Users\\Michael\\Documents\\rhythmic\\data\\sheet-music-input\\oompa\\1-sheet-music-img-3930696950f890fb151fe38f855e2db3.jpeg",

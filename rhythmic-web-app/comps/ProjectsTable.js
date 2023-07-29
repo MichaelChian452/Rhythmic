@@ -3,8 +3,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import path from 'node:path';
-
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';

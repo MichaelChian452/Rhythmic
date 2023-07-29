@@ -12,13 +12,13 @@ const getJSONList = async () => {
 export async function getProjectById(projectId) {
     const jsonList = await getJSONList();
     const {projectName, id, recordings} = jsonList.find(({ id }) => id === projectId);
-    const recordingsIDs = recordings.map(({id}) => {
-        return {id};
+    const recordingsIDsGrades = recordings.map(({id, grade}) => {
+        return {id, grade};
     });
     return {
         projectName,
         id, 
-        recordingsIDs
+        recordingsIDsGrades
     };
 }
 

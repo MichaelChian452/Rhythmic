@@ -1,0 +1,21 @@
+services:
+  audiveris:
+    image: 572716169937.dkr.ecr.us-west-1.amazonaws.com/rhythmic-docker:audiveris
+    container_name: audiveris
+    volumes:
+      - ./../data:/rhythmic/data
+      - ./../scripts:/rhythmic/scripts
+  omnizart:
+    image: 572716169937.dkr.ecr.us-west-1.amazonaws.com/rhythmic-docker:omnizart
+    container_name: omnizart
+    command: bash /tmp/dockerCommand.sh
+    volumes:
+      - ./../omnizart/dockerCommand.sh:/tmp/dockerCommand.sh
+      - ./../data:/rhythmic/data
+      - ./../scripts:/rhythmic/scripts
+  mscore:
+    image: 572716169937.dkr.ecr.us-west-1.amazonaws.com/rhythmic-docker:mscore
+    container_name: mscore
+    volumes:
+      - ./../data:/rhythmic/data
+      - ./../scripts:/rhythmic/scripts
