@@ -19,3 +19,8 @@ services:
     volumes:
       - ./data:/rhythmic/data
       - ./scripts:/rhythmic/scripts
+  webapp:
+    build: ./rhythmic-web-app
+    container_name: webapp
+    ports:
+      - "80:80"

@@ -19,3 +19,8 @@ services:
     volumes:
       - ./../data:/rhythmic/data
       - ./../scripts:/rhythmic/scripts
+  webapp:
+    image: 572716169937.dkr.ecr.us-west-1.amazonaws.com/rhythmic-docker:nextjs-web
+    container_name: webapp
+    ports:
+      - "80:80"
