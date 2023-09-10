@@ -16,6 +16,9 @@ Rhythmic makes use of MusicXML to store parsed sheet music along with parsed rec
 
 The web app was also deployed to AWS through the AWS [ECR](https://aws.amazon.com/ecr/) and [ECS](https://aws.amazon.com/ecs/) service. 
 
+Architecture Design Diagram: 
+![image](https://github.com/MichaelChian452/Rhythmic/assets/43621839/7be9caf1-8abb-4472-ad73-8d1de7277d29)
+
 ## Key Characteristics
 - Pictures of sheet music are parsed using Audiveris' OMR engine and stored in MusicXML. 
 - Recordings of their playing are transcribed using Omnizart to convert into MIDI and finally MuseScore to convert from MIDI to MusicXML.
